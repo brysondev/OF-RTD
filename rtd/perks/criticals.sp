@@ -17,8 +17,7 @@
 */
 
 
-#define FULLCRIT TFCond_CritOnFirstBlood
-#define MINICRIT TFCond_Buffed
+//#define FULLCRIT TFCond_CritOnFirstBlood
 
 public void Criticals_Call(int client, Perk perk, bool apply){
 	if(apply) Criticals_ApplyPerk(client, perk);
@@ -26,14 +25,13 @@ public void Criticals_Call(int client, Perk perk, bool apply){
 }
 
 void Criticals_ApplyPerk(int client, Perk perk){
-	TFCond iFull = perk.GetPrefCell("full") > 0 ? FULLCRIT : MINICRIT;
-	SetIntCache(client, view_as<int>(iFull));
-	TF2_AddCondition(client, iFull);
+	//TFCond iFull = FULLCRIT;
+	//SetIntCache(client, view_as<int>(iFull));
+	TF2_AddCondition(client, 11, TFCondDuration_Infinite);
 }
 
 void Criticals_RemovePerk(int client){
-	TF2_RemoveCondition(client, view_as<TFCond>(GetIntCache(client)));
+	TF2_RemoveCondition(client, 11);
 }
 
-#undef FULLCRIT
-#undef MINICRIT
+//#undef FULLCRIT

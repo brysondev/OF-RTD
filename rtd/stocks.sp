@@ -599,19 +599,19 @@ stock float GetBaseSpeed(int client){
 
 stock void SetSpeed(int client, float fBase, float fMul=1.0){
 	if(fMul == 1.0){
-		TF2Attrib_RemoveByDefIndex(client, 107);
+		//TF2Attrib_RemoveByDefIndex(client, 107);
 		SetEntPropFloat(client, Prop_Send, "m_flMaxspeed", fBase);
 	}else{
-		TF2Attrib_SetByDefIndex(client, 107, fMul);
+		//TF2Attrib_SetByDefIndex(client, 107, fMul);
 		SetEntPropFloat(client, Prop_Send, "m_flMaxspeed", fBase *fMul);
 	}
 }
 
 // calcualtes m_flMaxspeed itself, tad overkill for small, frequent updates (like drunkwalk)
 stock void SetSpeedEx(int client, float fMul=1.0){
-	if(fMul == 1.0)
-		TF2Attrib_RemoveByDefIndex(client, 107);
-	else TF2Attrib_SetByDefIndex(client, 107, fMul);
+	//if(fMul == 1.0)
+	//	TF2Attrib_RemoveByDefIndex(client, 107);
+	//else TF2Attrib_SetByDefIndex(client, 107, fMul);
 	TriggerSpeedRecalc(client);
 }
 

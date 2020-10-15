@@ -111,8 +111,8 @@ void MercsDieTwice_Resurrect(int client){
 	SetClientViewEntity(client, client);
 	KillEntCache(client);
 
-	TF2_RemoveCondition(client, TFCond_UberchargedCanteen);
-	TF2_AddCondition(client, TFCond_UberchargedCanteen, GetFloatCache(client));
+	//TF2_RemoveCondition(client, TFCond_UberchargedCanteen);
+	//TF2_AddCondition(client, TFCond_UberchargedCanteen, GetFloatCache(client));
 	EmitSoundToAll(SOUND_RESURRECT, client);
 
 	float fMulti = float(GetIntCache(client, HEALTH)) /100.0;

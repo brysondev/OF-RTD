@@ -56,7 +56,7 @@ void Frozen_Set(int client, int iValue){
 	Frozen_SetEntityAlpha(client, iValue);
 
 	int iWeapon = 0;
-	for(int i = 0; i < 5; i++){
+	for(int i = 0; i < 10; i++){
 		iWeapon = GetPlayerWeaponSlot(client, i);
 		if(iWeapon <= MaxClients || !IsValidEntity(iWeapon))
 			continue;

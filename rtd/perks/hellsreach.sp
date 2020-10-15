@@ -31,9 +31,9 @@
 int g_iHellsReachId = 66;
 
 void HellsReach_Start(){
-	PrecacheSound(SOUND_SLOWDOWN);
-	PrecacheSound(SOUND_LAUNCH);
-	PrecacheSound(SOUND_HELL_DAMAGE);
+	//PrecacheSound(SOUND_SLOWDOWN);
+	//PrecacheSound(SOUND_LAUNCH);
+	//PrecacheSound(SOUND_HELL_DAMAGE);
 }
 
 public void HellsReach_Call(int client, Perk perk, bool apply){
@@ -55,7 +55,7 @@ void HellsReach_ApplyPerk(int client, Perk perk){
 	SetEntCache(client, CreateParticle(client, HELL_GHOSTS, _, _, fAttachPos));
 	CreateTimer(1.0, Timer_HellsReach_SlowDown, GetClientUserId(client), TIMER_REPEAT);
 
-	EmitSoundToAll(SOUND_SLOWDOWN, client, _, _, _, _, 50);
+	//EmitSoundToAll(SOUND_SLOWDOWN, client, _, _, _, _, 50);
 }
 
 void HellsReach_RemovePerk(int client){
@@ -101,7 +101,7 @@ void HellsReach_Hurt(int client){
 	SDKHooks_TakeDamage(client, client, client, fDamage, DMG_PREVENT_PHYSICS_FORCE);
 
 	ViewPunchRand(client, 100.0);
-	EmitSoundToAll(SOUND_HELL_DAMAGE, client);
+	//EmitSoundToAll(SOUND_HELL_DAMAGE, client);
 }
 
 void HellsReach_Launch(int client){
@@ -110,10 +110,10 @@ void HellsReach_Launch(int client){
 	fVel[2] += 2048.0;
 	TeleportEntity(client, NULL_VECTOR, NULL_VECTOR, fVel);
 
-	EmitSoundToAll(SOUND_LAUNCH, client, _, _, _, _, 50);
-	EmitSoundToAll(SOUND_HELL_DAMAGE, client);
+	//EmitSoundToAll(SOUND_LAUNCH, client, _, _, _, _, 50);
+	//EmitSoundToAll(SOUND_HELL_DAMAGE, client);
 
-	TF2_IgnitePlayer(client, client);
+	//TF2_IgnitePlayer(client, client);
 }
 
 #undef BASE_SPEED

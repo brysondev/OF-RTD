@@ -23,9 +23,11 @@ public void Snail_Call(int client, Perk perk, bool apply){
 }
 
 void Snail_ApplyPerk(int client, Perk perk){
-	SetSpeedEx(client, perk.GetPrefFloat("multiplier"));
+	//SetSpeedEx(client, perk.GetPrefFloat("multiplier"));
+	SetEntPropFloat(client, Prop_Send, "m_flMaxspeed", perk.GetPrefFloat("multiplier"));
 }
 
 void Snail_RemovePerk(int client){
-	SetSpeedEx(client);
+	//SetSpeedEx(client);
+	SetEntPropFloat(client, Prop_Send, "m_flMaxspeed", 375);
 }

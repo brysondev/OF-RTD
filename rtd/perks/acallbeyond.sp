@@ -119,7 +119,7 @@ public Action Timer_ACallBeyond_PushToHoming(Handle hTimer, int iRef){
 
 	EmitSoundToAll(g_sSoundAirStrikeFire[GetRandomInt(0, 2)], iSpell, _, _, _, _, 250);
 	TeleportEntity(iSpell, NULL_VECTOR, NULL_VECTOR, view_as<float>({0.0, 0.0, 100.0}));
-	Homing_Push(iSpell, HOMING_ENEMIES|HOMING_SMOOTH);
+	//Homing_Push(iSpell, HOMING_ENEMIES|HOMING_SMOOTH);
 	return Plugin_Stop;
 }
 
